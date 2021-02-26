@@ -3,13 +3,6 @@ import csv
 
 budget = os.path.join("Resources", "budget_data.csv")
 
-
-# The total number of months included in the dataset
-# The net total amount of "Profit/Losses" over the entire period
-# The average of the changes in "Profit/Losses" over the entire period
-# The greatest increase in profits (date and amount) over the entire period
-# The greatest decrease in losses (date and amount) over the entire period
-
 total_months = 0
 total_pl = 0
 month_change = 0
@@ -45,7 +38,6 @@ with open(budget) as csvfile:
 average_month_change = total_month_change / (total_months-1)
 
 
-
 print("Financial Analysis")
 print("----------------------------")
 print("Total Months: " + str(total_months))
@@ -53,6 +45,7 @@ print("Total: $" + str(total_pl))
 print("Average Change: $" + str(round(average_month_change,2)))
 print("Greatest Increase in Profits: " + greatest_increase_month + " ($" + str(greatest_increase) + ")")
 print("Greatest Decrease in Profits: " + greatest_decrease_month + " ($" + str(greatest_decrease) + ")")
+
 
 file_to_output = os.path.join("analysis", "budget_analysis.txt")
 with open(file_to_output, "w") as txt_file:
